@@ -23,6 +23,8 @@ vector<int> twoSumNaive(const vector<int>&& nums, int target) {
 
 vector<int> twoSum(const vector<int>& nums, int target) {
 
+    // my soltution
+
     using indexedValue = std::pair<int, size_t>;
     auto sz = nums.size();
 
@@ -54,11 +56,33 @@ vector<int> twoSum(const vector<int>& nums, int target) {
     return {};
 }
 
+#include <unordered_map>
+
+vector<int> twoSumOptimal(const vector<int>& nums, int target) {
+
+    // mapping 
+    std::unordered_map<int, size_t> map;
+
+    // average: O(n), worst case
+    for (size_t i = 0; i < nums.size(); ++i)
+        map[nums[i]] = i;
+
+    // O(n)
+    for (size_t i = 0; i < nums.size(); ++i) {
+        int complement = target - nums[i];
+
+        if (map.find(complement) != map.end() && map[complement] != i )
+            return {int(i), int(map[complement])};
+    }
+
+    return {};
+}
+
 int main() {
 
-    print_vec(twoSum( {2,7,11,15}, 9 ));
-    print_vec(twoSum( {3,2,4},     6 ));
-    print_vec(twoSum( {3,3},       6 ));
+    print_vec(twoSumOptimal( {2,7,11,15}, 9 ));
+    print_vec(twoSumOptimal( {3,2,4},     6 ));
+    print_vec(twoSumOptimal( {3,3},       6 ));
 
     return 0;
 }
