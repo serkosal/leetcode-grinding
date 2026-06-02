@@ -1,0 +1,9 @@
+# python
+.venv
+__pycache__
+
+# c++
+*.out
+*.exe
+
+# js
