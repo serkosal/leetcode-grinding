@@ -7,9 +7,11 @@
             "args": [
                 "-fdiagnostics-color=always",
                 "-std=c++23",
+                "-fconcepts-diagnostics-depth=20",
                 "-I",
                 "${workspaceFolder}",
                 "-g",
+                "${workspaceFolder}/cpp_helpers/listNode.cpp",
                 "${file}",
                 "-o",
                 "${fileDirname}/${fileBasenameNoExtension}.out"
