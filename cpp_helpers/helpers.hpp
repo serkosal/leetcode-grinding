@@ -12,15 +12,12 @@ template <typename Container>
 requires std::ranges::range<Container>
 void print_container(const Container& c) {
     
-    size_t sz = c.size();
-
     std::cout << "[";
-    auto it = c.begin();
 
-    if (sz) 
+    auto it = c.begin();
+    if (it != c.end()) 
         std::cout << *(it++);
-    
-    for (; it < c.end(); ++it) 
+    for (; it != c.end(); ++it) 
         std::cout << ", " << *(it);
 
     std::cout << "]\n";
