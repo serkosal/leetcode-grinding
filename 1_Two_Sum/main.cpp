@@ -80,9 +80,9 @@ vector<int> twoSumOptimal(const vector<int>& nums, int target) {
 
 int main() {
 
-    print_vec(twoSumOptimal( {2,7,11,15}, 9 ));
-    print_vec(twoSumOptimal( {3,2,4},     6 ));
-    print_vec(twoSumOptimal( {3,3},       6 ));
+    print_container(twoSumOptimal( {2,7,11,15}, 9 ));
+    print_container(twoSumOptimal( {3,2,4},     6 ));
+    print_container(twoSumOptimal( {3,3},       6 ));
 
     return 0;
 }
