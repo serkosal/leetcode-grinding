@@ -4,10 +4,9 @@
 #define LEETCODE_GRINDING_LIST_NODE
 
 #include <ostream>
-#include <iterator> // For std::forward_iterator_tag
 #include <cstddef>  // For std::ptrdiff_t
-#include <forward_list>
 
+#include "helpers.hpp"
 
 // Definition for singly-linked list.
 struct ListNode {
@@ -16,7 +15,7 @@ struct ListNode {
 
     ListNode(int x = 0, ListNode* next = nullptr) : val(x), next(next) {}
 
-    static ListNode* make_list(std::initializer_list<int> l);
+    static ListNode* make_list(initializer_list<int> l);
     
     struct BaseIterator {
         using iterator_category = std::forward_iterator_tag;

@@ -1,8 +1,4 @@
-#include <string>
-#include <iostream>
-#include <map>
-
-using std::string, std::map;
+#include "cpp_helpers/helpers.hpp"
 
 int lengthOfLongestSubstring(const string& str) {
     int sz = str.size();
@@ -35,7 +31,7 @@ int main() {
 
     string s = "abcabcbb";
 
-    std::cout << lengthOfLongestSubstring(s) << "\n";
+    cout << lengthOfLongestSubstring(s) << "\n";
 
     return 0;
 }

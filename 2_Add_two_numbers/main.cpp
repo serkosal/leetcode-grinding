@@ -1,6 +1,3 @@
-#include <iostream>
-#include <vector>
-
 #include "cpp_helpers/listNode.hpp"
 #include "cpp_helpers/helpers.hpp"
 

@@ -1,9 +1,5 @@
-#include <iostream>
-#include <vector>
-
 #include "cpp_helpers/helpers.hpp"
 
-using std::vector;
 
 vector<int> twoSumNaive(const vector<int>&& nums, int target) {
     
@@ -19,13 +15,11 @@ vector<int> twoSumNaive(const vector<int>&& nums, int target) {
     return {};
 }
 
-#include <algorithm>
-
 vector<int> twoSum(const vector<int>& nums, int target) {
 
     // my soltution
 
-    using indexedValue = std::pair<int, size_t>;
+    using indexedValue = pair<int, size_t>;
     auto sz = nums.size();
 
     // create mapping from sorted values to their previous indexes in nums vector 
@@ -34,7 +28,7 @@ vector<int> twoSum(const vector<int>& nums, int target) {
         v.push_back({nums[i], i});
 
     // O(n * log n)
-    std::sort(v.begin(), v.end(), 
+    sort(v.begin(), v.end(), 
         [](const indexedValue& a, const indexedValue& b) -> bool {
             return a.first < b.first;
         }
@@ -56,12 +50,10 @@ vector<int> twoSum(const vector<int>& nums, int target) {
     return {};
 }
 
-#include <unordered_map>
-
 vector<int> twoSumOptimal(const vector<int>& nums, int target) {
 
     // mapping 
-    std::unordered_map<int, size_t> map;
+    unordered_map<int, size_t> map;
 
     // average: O(n), worst case
     for (size_t i = 0; i < nums.size(); ++i)

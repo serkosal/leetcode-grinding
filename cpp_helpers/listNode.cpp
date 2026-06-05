@@ -1,10 +1,9 @@
 #include "listNode.hpp"
 
-#include <iterator>
-#include <initializer_list>
+using std::ostream;
 
 
-ListNode* ListNode::make_list(std::initializer_list<int> l) {
+ListNode* ListNode::make_list(initializer_list<int> l) {
     size_t sz = l.size();
     if (sz == 0) return nullptr;
     
@@ -19,6 +18,6 @@ ListNode* ListNode::make_list(std::initializer_list<int> l) {
     return result;
 }
 
-std::ostream& operator<<(std::ostream& out, const ListNode& listNode ) {
+ostream& operator<<(ostream& out, const ListNode& listNode ) {
     return out << "{type: ListNode, val: " << listNode.val << "}"; 
 }
